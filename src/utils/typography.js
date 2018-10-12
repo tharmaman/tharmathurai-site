@@ -1,6 +1,6 @@
 import Typography from 'typography';
-import twinPeaksTheme from 'typography-theme-twin-peaks';
+import funstonTheme from 'typography-theme-funston';
 
-const typography = new Typography(twinPeaksTheme);
+const typography = new Typography(funstonTheme);
 
 export default typography;
