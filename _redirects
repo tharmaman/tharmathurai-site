@@ -1,5 +1,5 @@
-# Redirect default Netlify subdomain to primary domain
-http://jolly-elion-e391fe.netlify.com/* http://www.tharmathurai.com/:splat 301!
-
 # Redirect domain aliases to primary domain
 http://www.thesadnessofgeography.com/* http://www.tharmathurai.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+http://jolly-elion-e391fe.netlify.com/* http://www.tharmathurai.com/:splat 301!
