@@ -6,6 +6,10 @@ import { Row, Col } from 'reactstrap'
 import { SocialIcon } from 'react-social-icons'
 
 const AboutCard = ({ authorData }) => {
+  const iconNoUnderline = {
+    backgroundImage: 'none',
+  }
+
   return (
     <Row>
       <Col sm="7">
@@ -19,13 +23,13 @@ const AboutCard = ({ authorData }) => {
         </Row>
         <Row>
           <Col sm="4">
-            <SocialIcon url={authorData.twitter} />
+            <SocialIcon style={iconNoUnderline} url={authorData.twitter} />
           </Col>
           <Col sm="4">
-            <SocialIcon url={authorData.instagram} />
+            <SocialIcon style={iconNoUnderline} url={authorData.instagram} />
           </Col>
           <Col sm="4">
-            <SocialIcon url={`mailto:${authorData.email}`} />
+            <SocialIcon style={iconNoUnderline} url={`mailto:${authorData.email}`} />
           </Col>
         </Row>
       </Col>
