@@ -1,4 +1,5 @@
 import React from 'react'
+import { Col } from 'reactstrap'
 
 const AboutText = ({ authorData }) => {
   const { shortBio } = authorData;
