@@ -22,30 +22,58 @@ const leadStyle = {
 //   // textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000'
 // }
 
-
-const IndexPage = () => (
-  <Layout>
-    <Container fluid>
-      <Navbar />
-      <Jumbotron fluid style={jumbotronStyle}>
-        <Container fluid>
-          <h1 className="display-3">
-            The Sadness Of Geography
-          </h1>
-          <p className="lead" style={leadStyle}>
-            My Life as a Tamile Exile
-          </p>
-        </Container>
-      </Jumbotron>
-      <Row>
-        <Col xs="12">
-          <h2>About The Author</h2>
-        </Col>
-      </Row>
-      <AboutCard />
-    </Container>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  const authorData = data.allContentfulPerson.edges[0].node
+  return (
+    <Layout>
+      <Container fluid>
+        <Navbar />
+        <Jumbotron fluid style={jumbotronStyle}>
+          <Container fluid>
+            <h1 className="display-3">The Sadness Of Geography</h1>
+            <p className="lead" style={leadStyle}>
+              My Life as a Tamile Exile
+            </p>
+          </Container>
+        </Jumbotron>
+        <Row>
+          <Col xs="12">
+            <h2>About The Author</h2>
+          </Col>
+        </Row>
+        <AboutCard authorData={authorData} />
+      </Container>
+    </Layout>
+  )
+}
 
 export default IndexPage
 
+export const indexQuery = graphql`
+  query indexQuery {
+    allContentfulPerson(
+      filter: { contentful_id: { eq: "2fvgTYuU9mE6gwGkwYQKOs" } }
+    ) {
+      edges {
+        node {
+          name
+          email
+          role
+          email
+          twitter
+          instagram
+          image {
+            file {
+              url
+            }
+          }
+          shortBio {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
+  }
+`
