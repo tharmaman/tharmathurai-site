@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AboutText from './AboutText';
 import ImageHolder from './ImageHolder'
 
