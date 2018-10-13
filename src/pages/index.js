@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
         <Navbar />
         <Jumbotron fluid style={jumbotronStyle}>
           <Container fluid>
-            <h1 className="display-3">The Sadness Of Geography</h1>
+            <h1 className="display-3" style={leadStyle}>The Sadness Of Geography</h1>
             <p className="lead" style={leadStyle}>
               My Life as a Tamile Exile
             </p>
