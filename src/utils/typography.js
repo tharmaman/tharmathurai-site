@@ -1,6 +1,6 @@
 import Typography from 'typography';
-import funstonTheme from 'typography-theme-funston';
+import lawtonTheme from 'typography-theme-lawton';
 
-const typography = new Typography(funstonTheme);
+const typography = new Typography(lawtonTheme);
 
 export default typography;

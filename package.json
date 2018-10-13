@@ -21,10 +21,12 @@
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-social-icons": "^3.0.0",
     "react-typography": "^0.16.13",
     "reactstrap": "^6.5.0",
     "typography": "^0.16.17",
     "typography-theme-funston": "^0.15.10",
+    "typography-theme-lawton": "^0.15.10",
     "typography-theme-twin-peaks": "^0.15.11"
   },
   "keywords": [

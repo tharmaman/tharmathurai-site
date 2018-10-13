@@ -1,12 +1,15 @@
 import React from 'react'
-import { Col } from 'reactstrap'
+import { Col, Row } from 'reactstrap'
 
-const ImageHolder = ({ authorData }) => {  
+const ImageHolder = ({ authorData }) => {
   return (
-    <Col sm='5'>
-      <div class="row text-center">
-        <img className="rounded-circle" src={authorData.image.resize.src} alt="author picture"/>
-      </div>
+    <Col sm="5" className="centre">
+      <Row className="mx-auto">
+        <img
+          className="mx-auto img-responsive rounded-circle"
+          src={authorData.image.resize.src}
+        />
+      </Row>
     </Col>
   )
 }

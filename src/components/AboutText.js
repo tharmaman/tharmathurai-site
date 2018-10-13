@@ -5,7 +5,7 @@ const AboutText = ({ authorData }) => {
   const { shortBio } = authorData;
 
   return (
-    <Col sm="7">
+    <Col sm="12">
       <div dangerouslySetInnerHTML={{__html: shortBio.childMarkdownRemark.html}} />
     </Col>
   )

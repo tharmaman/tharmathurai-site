@@ -31,11 +31,6 @@ const IndexPage = ({ data }) => {
             </p>
           </Container>
         </Jumbotron>
-        <Row>
-          <Col xs="12">
-            <h2>About The Author</h2>
-          </Col>
-        </Row>
         <AboutCard authorData={authorData} />
       </Container>
     </Layout>
@@ -58,7 +53,7 @@ export const indexQuery = graphql`
           twitter
           instagram
           image {
-            resize(width: 200 height: 200) {
+            resize(width: 317 height: 317) {
               src
             }
             file {
