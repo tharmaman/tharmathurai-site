@@ -17,11 +17,6 @@ const leadStyle = {
   color: 'white',
 }
 
-// const displayStyle = {
-//   // textShadow: '4px 0 0',
-//   // textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000'
-// }
-
 const IndexPage = ({ data }) => {
   const authorData = data.allContentfulPerson.edges[0].node
   return (
