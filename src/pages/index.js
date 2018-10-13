@@ -2,10 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Jumbotron, Container } from 'reactstrap'
+import { Jumbotron, Container, Row } from 'reactstrap'
 import Navbar from '../components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AboutCard from '../components/AboutCard'
+import EventsCard from '../components/EventsCard'
+import SubscribeCard from '../components/SubscribeCard'
 
 const jumbotronStyle = {
   backgroundImage:
@@ -35,6 +37,12 @@ const IndexPage = ({ data }) => {
           </Container>
         </Jumbotron>
         <AboutCard authorData={authorData} />
+        <br />
+        <br />
+        <Row>
+          <EventsCard />
+          <SubscribeCard />
+        </Row>
       </Container>
     </Layout>
   )
