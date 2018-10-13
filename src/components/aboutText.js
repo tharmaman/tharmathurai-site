@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default props => {
-  const { shortBio } = props.authorData;
+export default ({ authorData }) => {
+  const { shortBio } = authorData;
 
   return (
     <div className="col-sm-7">

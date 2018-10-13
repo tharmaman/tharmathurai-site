@@ -63,6 +63,9 @@ export const indexQuery = graphql`
           twitter
           instagram
           image {
+            resize(width: 200 height: 200) {
+              src
+            }
             file {
               url
             }

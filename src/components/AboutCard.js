@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import aboutText from './aboutText';
-import imageHolder from './imageHolder'
+import AboutText from './AboutText';
+import ImageHolder from './ImageHolder'
 
-import { Row, Col } from 'reactstrap'; 
+import { Row } from 'reactstrap'; 
 
-const AboutContainer  = props => {
+const AboutContainer  = ({ authorData }) => {
     return (
       <Row>
-        
+        <AboutText authorData={authorData} />
+        <ImageHolder authorData={authorData} />
       </Row>
     )
 }
