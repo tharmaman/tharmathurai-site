@@ -41,12 +41,5 @@ module.exports = {
         endpoint: process.env.MAILCHIMP_END,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
   ],
 }
