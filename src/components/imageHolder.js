@@ -1,12 +1,7 @@
 import React from 'react'
 import { Col } from 'reactstrap'
 
-export default ({ authorData }) => {
-  const imageStyle = {
-    left: '50%',
-    right: '50%',
-  }
-  
+const ImageHolder = ({ authorData }) => {  
   return (
     <Col sm='5'>
       <div class="row text-center">
@@ -15,3 +10,5 @@ export default ({ authorData }) => {
     </Col>
   )
 }
+
+export default ImageHolder

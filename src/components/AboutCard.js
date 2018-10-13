@@ -4,7 +4,7 @@ import ImageHolder from './ImageHolder'
 
 import { Row } from 'reactstrap'; 
 
-const AboutContainer  = ({ authorData }) => {
+const AboutCard  = ({ authorData }) => {
     return (
       <Row>
         <AboutText authorData={authorData} />
@@ -13,4 +13,4 @@ const AboutContainer  = ({ authorData }) => {
     )
 }
 
-export default AboutContainer;
+export default AboutCard;

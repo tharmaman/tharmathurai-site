@@ -1,11 +1,13 @@
 import React from 'react'
 
-export default ({ authorData }) => {
+const AboutText = ({ authorData }) => {
   const { shortBio } = authorData;
 
   return (
-    <div className="col-sm-7">
+    <Col sm="7">
       <div dangerouslySetInnerHTML={{__html: shortBio.childMarkdownRemark.html}} />
-    </div>
+    </Col>
   )
 }
+
+export default AboutText;
