@@ -1,7 +1,8 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Jumbotron, Container, Row, Col } from 'reactstrap'
+import { Jumbotron, Container } from 'reactstrap'
 import Navbar from '../components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AboutCard from '../components/AboutCard'
@@ -25,7 +26,9 @@ const IndexPage = ({ data }) => {
         <Navbar />
         <Jumbotron fluid style={jumbotronStyle}>
           <Container fluid>
-            <h1 className="display-3" style={leadStyle}>The Sadness Of Geography</h1>
+            <h1 className="display-3" style={leadStyle}>
+              The Sadness Of Geography
+            </h1>
             <p className="lead" style={leadStyle}>
               My Life as a Tamile Exile
             </p>
@@ -39,7 +42,7 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
-export const indexQuery = graphql`
+export const authorQuery = graphql`
   query indexQuery {
     allContentfulPerson(
       filter: { contentful_id: { eq: "2fvgTYuU9mE6gwGkwYQKOs" } }
@@ -52,19 +55,24 @@ export const indexQuery = graphql`
           email
           twitter
           instagram
-          image {
-            resize(width: 317 height: 317) {
-              src
-            }
-            file {
-              url
-            }
-          }
           shortBio {
             childMarkdownRemark {
               html
             }
           }
+        }
+      }
+    }
+    allContentfulEvent(
+      limit: 5
+      filter: { node_locale: { eq: "en-US" } }
+      sort: { fields: [time], order: DESC }
+    ) {
+      edges {
+        node {
+          address
+          time
+          eventName
         }
       }
     }
