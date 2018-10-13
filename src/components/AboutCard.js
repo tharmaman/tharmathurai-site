@@ -3,12 +3,9 @@ import React from 'react'
 import AboutText from './AboutText'
 import ImageHolder from './ImageHolder'
 import { Row, Col } from 'reactstrap'
-import { SocialIcon } from 'react-social-icons'
+import SocialWidget from './SocialWidget'
 
 const AboutCard = ({ authorData }) => {
-  const iconNoUnderline = {
-    backgroundImage: 'none',
-  }
 
   return (
     <Row>
@@ -21,19 +18,11 @@ const AboutCard = ({ authorData }) => {
         <Row>
           <AboutText authorData={authorData} />
         </Row>
-        <Row>
-          <Col sm="4">
-            <SocialIcon style={iconNoUnderline} url={authorData.twitter} />
-          </Col>
-          <Col sm="4">
-            <SocialIcon style={iconNoUnderline} url={authorData.instagram} />
-          </Col>
-          <Col sm="4">
-            <SocialIcon style={iconNoUnderline} url={`mailto:${authorData.email}`} />
-          </Col>
-        </Row>
       </Col>
-      <ImageHolder authorData={authorData} />
+      <Col sm="5">
+        <ImageHolder className="row justify-content-center" authorData={authorData} />
+        <SocialWidget className="row justify-content-center" authorData={authorData} />
+      </Col>
     </Row>
   )
 }
