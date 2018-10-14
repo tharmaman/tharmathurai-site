@@ -19,9 +19,9 @@ const AboutCard = ({ authorData }) => {
           <AboutText authorData={authorData} />
         </Row>
       </Col>
-      <Col sm="5">
-        <ImageHolder className="row justify-content-center" authorData={authorData} />
-        <SocialWidget className="row justify-content-center" authorData={authorData} />
+      <Col className="justify-content-center" sm="5" xs="12">
+        <ImageHolder className="justify-content-center" authorData={authorData} />
+        <SocialWidget className="justify-content-center" authorData={authorData} />
       </Col>
     </Row>
   )

@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import AboutCard from '../components/AboutCard'
 import EventsCard from '../components/EventsCard'
 import SubscribeCard from '../components/SubscribeCard'
+import '../assets/css/main.css'
 
 const jumbotronStyle = {
   backgroundImage:
@@ -28,16 +29,15 @@ const IndexPage = ({ data }) => {
         <Navbar />
         <Jumbotron fluid style={jumbotronStyle}>
           <Container fluid>
-            <h1 className="display-3" style={leadStyle}>
+            <h1 id="lead" className="display-3">
               The Sadness Of Geography
             </h1>
             <p className="lead" style={leadStyle}>
-              My Life as a Tamile Exile
+              My Life as a Tamil Exile
             </p>
           </Container>
         </Jumbotron>
         <AboutCard authorData={authorData} />
-        <br />
         <br />
         <Row>
           <EventsCard />

@@ -8,14 +8,14 @@ const SocialWidget = ({ authorData }) => {
   }
   console.log(authorData.twitter)
   return (
-    <Row>
-      <Col sm="4">
+    <Row className="justify-content-center align-items-center">
+      <Col xs="3" className="mx-auto">
         <SocialIcon style={iconNoUnderline} url={authorData.twitter} />
       </Col>
-      <Col sm="4">
+      <Col xs="3" className="mx-auto">
         <SocialIcon style={iconNoUnderline} url={authorData.instagram} />
       </Col>
-      <Col sm="4">
+      <Col xs="3" className="mx-auto">
         <SocialIcon
           style={iconNoUnderline}
           url={`mailto:${authorData.email}`}
