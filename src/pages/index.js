@@ -23,6 +23,7 @@ const leadStyle = {
 
 const IndexPage = ({ data }) => {
   const authorData = data.allContentfulPerson.edges[0].node
+  const eventData = data.allContentfulEvent.edges
   return (
     <Layout>
       <Container fluid>
@@ -40,7 +41,7 @@ const IndexPage = ({ data }) => {
         <AboutCard authorData={authorData} />
         <br />
         <Row>
-          <EventsCard />
+          <EventsCard eventData={eventData}/>
           <SubscribeCard />
         </Row>
       </Container>
@@ -74,7 +75,7 @@ export const authorQuery = graphql`
     allContentfulEvent(
       limit: 5
       filter: { node_locale: { eq: "en-US" } }
-      sort: { fields: [time], order: DESC }
+      sort: { fields: [time], order: ASC }
     ) {
       edges {
         node {

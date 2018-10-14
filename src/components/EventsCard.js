@@ -1,14 +1,15 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, Col } from 'reactstrap';
+import { Card, CardText, CardBody,
+  CardTitle, CardSubtitle, Col } from 'reactstrap';
+import EventTable from './EventTable'
 
-const EventsCard = (props) => {
+const EventsCard = ({ eventData }) => {
   return (
     <Col sm='6'>
       <Card>
-
         <CardBody>
           <CardTitle>Upcoming Events</CardTitle>
+          <EventTable eventData={eventData} />
         </CardBody>
       </Card>
     </Col>
