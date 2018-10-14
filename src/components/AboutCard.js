@@ -12,7 +12,7 @@ const AboutCard = ({ authorData }) => {
       <Col sm="7">
         <Row>
           <Col sm="12">
-            <h3>About The Author</h3>
+            <h3 style={{marginTop: '0rem'}}>About The Author</h3>
           </Col>
         </Row>
         <Row>
