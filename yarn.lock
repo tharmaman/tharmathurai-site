@@ -4252,11 +4252,6 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-dompurify@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.8.tgz#3fa0d91fde3827d6509d83b43444da56a2796795"
-  integrity sha512-vetRFbN1SXSPfP3ClIiYnxTrXquSqakBEOoB5JESn0SVcSYzpu6ougjakpKnskGctYdlNpwf+riUHSkG7d4XUw==
-
 domready@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/domready/-/domready-1.0.8.tgz#91f252e597b65af77e745ae24dd0185d5e26d58c"
@@ -10680,6 +10675,11 @@ react-popper@^0.10.4:
   dependencies:
     popper.js "^1.14.1"
     prop-types "^15.6.1"
+
+react-sanitized-html@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-sanitized-html/-/react-sanitized-html-2.0.0.tgz#2ac300ae60e8e7cb28378b1233b9630e415d0241"
+  integrity sha512-G1n8smzDSqiHoBtvfJqcyvDKXlWTrvARRgWoSKhqeDVxxb9emO4ourS1OYnzV6yxx/G4jLqzaFSx8b6roL29Kw==
 
 react-side-effect@^1.1.0:
   version "1.1.5"

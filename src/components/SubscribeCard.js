@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import DOMPurify from 'dompurify'
 import {
   Card,
   CardBody,
@@ -15,6 +14,7 @@ import {
   Alert,
 } from 'reactstrap'
 import Loader from 'react-loader-spinner'
+import SanitizedHTML from 'react-sanitized-html'
 
 class EventsCard extends Component {
   state = {
@@ -91,10 +91,9 @@ class EventsCard extends Component {
         <Alert color="danger">
           <div
             style={{ textShadow: 'none !important' }}
-            dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(this.state.msg),
-            }}
-          />
+          >
+            <SanitizedHTML html={this.state.msg} />
+          </div>
         </Alert>
       )
     }

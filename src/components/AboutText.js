@@ -1,15 +1,16 @@
 import React from 'react'
 import { Col } from 'reactstrap'
-import DOMPurify from 'dompurify'
+import SanitizedHTML from 'react-sanitized-html'
 
 const AboutText = ({ authorData }) => {
-  const { shortBio } = authorData;
+  const { shortBio } = authorData
+  const dirty = shortBio.childMarkdownRemark.html
 
   return (
     <Col sm="12">
-      <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(shortBio.childMarkdownRemark.html)}} />
+      <SanitizedHTML html={dirty} />
     </Col>
   )
 }
 
-export default AboutText;
+export default AboutText
