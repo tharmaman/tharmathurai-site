@@ -15,6 +15,7 @@ import {
 } from 'reactstrap'
 import Loader from 'react-loader-spinner'
 import SanitizedHTML from 'react-sanitized-html'
+import './SubscribeCard-module.css'
 
 class EventsCard extends Component {
   state = {
