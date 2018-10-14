@@ -89,29 +89,36 @@ class EventsCard extends Component {
     } else if (this.state.isSubmitted && !this.state.isSuccessful) {
       AlertTing = (
         <Alert color="danger">
-            <div style={{textShadow: 'none'}} dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.state.msg)}} />
+          <div
+            style={{ textShadow: 'none' }}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(this.state.msg),
+            }}
+          />
         </Alert>
       )
     }
 
     const Body = !this.state.isLoading ? (
       <Form onSubmit={this._handleSubmit}>
-        <FormGroup>
-          <Input
-            onChange={this._handleChange}
-            type="text"
-            name="name"
-            placeholder="Your Name"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            onChange={this._handleChange}
-            type="email"
-            name="email"
-            placeholder="Your Email"
-          />
-        </FormGroup>
+        <div className="form-row">
+          <FormGroup className='col-md-5'>
+            <Input
+              onChange={this._handleChange}
+              type="text"
+              name="name"
+              placeholder="Your Name"
+            />
+          </FormGroup>
+          <FormGroup className='col-md-7'>
+            <Input
+              onChange={this._handleChange}
+              type="email"
+              name="email"
+              placeholder="Your Email"
+            />
+          </FormGroup>
+        </div>
         <Button size="lg" color="primary" block>
           Subscribe
         </Button>
@@ -123,11 +130,11 @@ class EventsCard extends Component {
     )
 
     return (
-      <Col sm="6">
+      <Col xs="12">
         <Card>
           <CardBody>
             {AlertTing}
-            <CardTitle>Stay Up To Date With the Latest News</CardTitle>
+            <CardTitle className="text-center">Stay Up To Date With the Latest News</CardTitle>
             {Body}
           </CardBody>
         </Card>

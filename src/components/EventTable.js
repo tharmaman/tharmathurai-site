@@ -10,10 +10,11 @@ const EventTable = ({ eventData }) => {
     return <TableRow key={i} eventData={node} />
   })
 
+
   return (
-    <div className="table-responsive">
+    <div className="table-responsive table-borderless">
       <Table id="responsiveTable">
-        <thead>
+        <thead id="header">
           <tr>
             <th>When</th>
             <th>What</th>

@@ -1,3 +1,8 @@
 #responsiveTable {
-    font-size: 5px;
+    font-size: 0.8rem;
+}
+
+#header {
+    border-top: 1px solid gainsboro;
+    border-bottom: 2px solid gainsboro;
 }

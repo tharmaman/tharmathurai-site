@@ -5,10 +5,10 @@ import EventTable from './EventTable'
 
 const EventsCard = ({ eventData }) => {
   return (
-    <Col sm='6'>
+    <Col xs='12'>
       <Card>
         <CardBody>
-          <CardTitle>Upcoming Events</CardTitle>
+          <CardTitle className="text-center">Upcoming Events</CardTitle>
           <EventTable eventData={eventData} />
         </CardBody>
       </Card>

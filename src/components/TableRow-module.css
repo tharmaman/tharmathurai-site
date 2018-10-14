@@ -1,0 +1,6 @@
+@media screen and (max-width: 554px) {
+    /* start of phone styles */
+    #time {
+        min-width: 6.9em;
+    }
+}

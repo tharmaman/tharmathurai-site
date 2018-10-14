@@ -42,6 +42,9 @@ const IndexPage = ({ data }) => {
         <br />
         <Row>
           <EventsCard eventData={eventData}/>
+        </Row>
+        <br />
+        <Row>
           <SubscribeCard />
         </Row>
       </Container>
