@@ -10,8 +10,9 @@ const EventTable = ({ eventData }) => {
     return <TableRow key={i} eventData={node} />
   })
 
-
-  return (
+  const output = (eventData.length !== 0) ? (
+    <h6 id='stayTuned' className="text-center">~ Stay Tuned! ~</h6>
+  ) : (
     <div className="table-responsive table-borderless">
       <Table id="responsiveTable">
         <thead id="header">
@@ -23,6 +24,29 @@ const EventTable = ({ eventData }) => {
         </thead>
         <tbody>{body}</tbody>
       </Table>
+    </div>
+  )
+
+  console.log('output',output)
+
+  const ting = (
+    <div className="table-responsive table-borderless">
+      <Table id="responsiveTable">
+        <thead id="header">
+          <tr>
+            <th>When</th>
+            <th>What</th>
+            <th>Where</th>
+          </tr>
+        </thead>
+        <tbody>{body}</tbody>
+      </Table>
+    </div>
+  )
+
+  return (
+    <div>
+      {output}
     </div>
   )
 }

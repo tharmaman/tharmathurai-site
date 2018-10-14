@@ -3,8 +3,6 @@ import React from 'react'
 import './TableRow-module.css'
 
 export default function TableRow({ eventData }) {
-  console.log('inside table row')
-  console.log(eventData)
   const { address, time, eventName } = eventData.node
   const dateObj = new Date(time)
   const options = {
@@ -16,12 +14,9 @@ export default function TableRow({ eventData }) {
     minute: 'numeric',
   }
   const dateString = dateObj.toLocaleDateString('en-US', options)
-  console.log(dateString)
   return (
     <tr>
-      <b>
-        <td id="time">{dateString}</td>
-      </b>
+      <td id="time">{dateString}</td>
       <td>{eventName}</td>
       <td>{address}</td>
     </tr>
