@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
         <AboutCard authorData={authorData} />
         <br />
         <Row>
-          <EventsCard eventData={eventData}/>
+          <EventsCard eventData={eventData} />
         </Row>
         <br />
         <Row>
@@ -76,7 +76,7 @@ export const authorQuery = graphql`
       }
     }
     allContentfulEvent(
-      limit: 5
+      limit: 4
       filter: { node_locale: { eq: "en-US" } }
       sort: { fields: [time], order: ASC }
     ) {
@@ -90,4 +90,3 @@ export const authorQuery = graphql`
     }
   }
 `
-

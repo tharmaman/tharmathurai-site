@@ -1,7 +1,4 @@
-@media screen and (max-width: 554px) {
-    /* start of phone styles */
-    #time {
-        min-width: 7.9em;
-        font-weight: bold;
-    }
+#time {
+    min-width: 7.9em;
+    font-weight: bold;
 }

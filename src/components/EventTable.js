@@ -6,11 +6,12 @@ import './EventTable-module.css'
 
 const EventTable = ({ eventData }) => {
   console.log(eventData)
-  const body = eventData.map((node, i) => {
+  const filteredEventData = eventData.filter((node) => node.eventName === 'DoNotDelete')
+  const body = filteredEventData.map((node, i) => {
     return <TableRow key={i} eventData={node} />
   })
 
-  const output = (eventData.length !== 0) ? (
+  const output = (filteredEventData.length === 0) ? (
     <h6 id='stayTuned' className="text-center">~ Stay Tuned! ~</h6>
   ) : (
     <div className="table-responsive table-borderless">
@@ -28,21 +29,6 @@ const EventTable = ({ eventData }) => {
   )
 
   console.log('output',output)
-
-  const ting = (
-    <div className="table-responsive table-borderless">
-      <Table id="responsiveTable">
-        <thead id="header">
-          <tr>
-            <th>When</th>
-            <th>What</th>
-            <th>Where</th>
-          </tr>
-        </thead>
-        <tbody>{body}</tbody>
-      </Table>
-    </div>
-  )
 
   return (
     <div>

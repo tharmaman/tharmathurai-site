@@ -1,11 +1,10 @@
-import React from 'react';
-import { Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Col } from 'reactstrap';
+import React from 'react'
+import { Card, CardBody, CardTitle, Col } from 'reactstrap'
 import EventTable from './EventTable'
 
 const EventsCard = ({ eventData }) => {
   return (
-    <Col xs='12'>
+    <Col xs="12">
       <Card>
         <CardBody>
           <CardTitle className="text-center">Upcoming Events</CardTitle>
@@ -13,7 +12,7 @@ const EventsCard = ({ eventData }) => {
         </CardBody>
       </Card>
     </Col>
-  );
-};
+  )
+}
 
-export default EventsCard;
+export default EventsCard

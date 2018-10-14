@@ -90,7 +90,7 @@ class EventsCard extends Component {
       AlertTing = (
         <Alert color="danger">
           <div
-            style={{ textShadow: 'none' }}
+            style={{ textShadow: 'none !important' }}
             dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(this.state.msg),
             }}
