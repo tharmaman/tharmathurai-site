@@ -28,7 +28,6 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    console.log('in componentDidMount');
     let d1 = new Date()
     // let test = new Date('2018-10-15T18:04:00-04:00')
     let d2 = new Date('2019-07-06T00:00:00-04:00')
