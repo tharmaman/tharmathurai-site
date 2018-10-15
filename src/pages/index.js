@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => {
           <SubscribeCard />
         </Row>
         <footer >
-        <div style={{backgroundColor: 'whitesmoke', color: 'Grey',fontSize: '0.65em'}} className="footer-copyright text-center py-3 px-3">
+        <div style={{backgroundColor: '#f8f9fa', color: 'Grey',fontSize: '0.65em'}} className="footer-copyright text-center py-3 px-3">
           © 2018 Copyright
           Logathasan Tharmathurai. Made in React ⚛️ by his son.
         </div>
