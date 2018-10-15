@@ -87,7 +87,7 @@ class IndexPage extends Component {
               {renderButton}
             </Container>
           </Jumbotron>
-          {/* just remember to remove this after the time passes */}
+          {/* you can remove this after time passes */}
           {renderCountdown}
           <br />
           <AboutCard authorData={authorData} />
