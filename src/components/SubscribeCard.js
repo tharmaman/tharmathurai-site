@@ -112,7 +112,7 @@ class EventsCard extends Component {
       </Form>
     ) : (
       <Row className="justify-content-center">
-        <Loader type="Oval" color="#157ffb" height="200" width="200" />
+        <Loader type="Oval" color="#FF5700" height="200" width="200" />
       </Row>
     )
 
