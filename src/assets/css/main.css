@@ -8,3 +8,7 @@
     font-size: 3.1em;
   }
 }
+
+a {
+  text-shadow: none !important;
+}
