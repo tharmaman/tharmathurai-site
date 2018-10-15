@@ -12,7 +12,7 @@ import '../assets/css/main.css'
 
 const jumbotronStyle = {
   backgroundImage:
-    'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),url(https://res.cloudinary.com/tharmaman/image/upload/v1539364099/header-background3.jpg)',
+    'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),url(https://res.cloudinary.com/tharmaman/image/upload/v1539589118/header-background3-supermin.jpg)',
   backgroundSize: 'cover',
   color: 'White',
 }
@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
   const eventData = data.allContentfulEvent.edges
   return (
     <Layout>
-      <Container fluid>
+      <Container fluid >
         <Navbar />
         <Jumbotron fluid style={jumbotronStyle}>
           <Container fluid>
@@ -47,6 +47,12 @@ const IndexPage = ({ data }) => {
         <Row>
           <SubscribeCard />
         </Row>
+        <footer >
+        <div style={{backgroundColor: 'whitesmoke', color: 'Grey',fontSize: '0.65em'}} className="footer-copyright text-center py-3">
+          © 2018 Copyright
+          Logathasan Tharmathurai. Made with React ⚛️ by his son.
+        </div>
+      </footer>
       </Container>
     </Layout>
   )
