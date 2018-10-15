@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Jumbotron, Container, Row } from 'reactstrap'
+import { Jumbotron, Container, Row, Button } from 'reactstrap'
 import Navbar from '../components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AboutCard from '../components/AboutCard'
 import EventsCard from '../components/EventsCard'
 import SubscribeCard from '../components/SubscribeCard'
+import SexyCountdown from 'react-sexy-countdown'
 import '../assets/css/main.css'
 
 const jumbotronStyle = {
@@ -21,50 +22,87 @@ const leadStyle = {
   color: 'white',
 }
 
-const IndexPage = ({ data }) => {
-  const authorData = data.allContentfulPerson.edges[0].node
-  const eventData = data.allContentfulEvent.edges
-  return (
-    <Layout>
-      <Container fluid>
-        <Navbar />
-        <Jumbotron fluid style={jumbotronStyle}>
-          <Container fluid>
-            <h1 id="lead" className="display-3">
-              The Sadness Of Geography
-            </h1>
-            <p className="lead" style={leadStyle}>
-              My Life as a Tamil Exile
-            </p>
-          </Container>
-        </Jumbotron>
-        <AboutCard authorData={authorData} />
-        <br />
-        <Row>
-          <EventsCard eventData={eventData} />
-        </Row>
-        <br />
-        <Row>
-          <SubscribeCard />
-        </Row>
-        <footer>
-          <div
-            style={{
-              backgroundColor: '#f8f9fa',
-              color: 'Grey',
-              fontSize: '0.65em',
-            }}
-            className="footer-copyright text-center py-3 px-4"
-          >
-            <a href="mailto:dtcorreo@gmail.com">
-              © 2018 Copyright Logathasan Tharmathurai.
-            </a>{' '}
-            Made in React ⚛️ by his son.
-          </div>
-        </footer>
-      </Container>
-    </Layout>
-  )
+class IndexPage extends Component {
+  state = {
+    isReleased: false,
+  }
+
+  handleCountdown = () => {
+    this.setState({
+      isReleased: true,
+    })
+  }
+
+  render() {
+    const { data } = this.props
+    const authorData = data.allContentfulPerson.edges[0].node
+    const eventData = data.allContentfulEvent.edges
+    const JSONdate = '2019-07-06T00:00:00-04:00'
+    const testDate = '2018-10-15T15:00:00-04:00'
+    const objDate = new Date(JSONdate)
+    console.log(objDate.toLocaleDateString())
+    let renderButton = !this.state.isReleased ? (
+      <div />
+    ) : (
+      <Button
+        size="lg"
+        color="primary"
+        onClick={() =>
+          window.open('https://www.dundurn.com/books/Sadness-Geography')
+        }
+      >
+        ORDER NOW
+      </Button>
+    )
+    return (
+      <Layout>
+        <Container fluid>
+          <Navbar />
+          <Jumbotron fluid style={jumbotronStyle}>
+            <Container fluid>
+              <h1 id="lead" className="display-3">
+                The Sadness Of Geography
+              </h1>
+              <p className="lead" style={leadStyle}>
+                My Life as a Tamil Exile
+              </p>
+              {renderButton}
+            </Container>
+          </Jumbotron>
+          {/* just remember to remove this after the time passes */}
+          <SexyCountdown
+            date={testDate}
+            onEndCountdown={() => this.handleCountdown()}
+          />
+          <br />
+          <AboutCard authorData={authorData} />
+          <br />
+          <Row>
+            <EventsCard eventData={eventData} />
+          </Row>
+          <br />
+          <Row>
+            <SubscribeCard />
+          </Row>
+          <footer>
+            <div
+              style={{
+                backgroundColor: '#f8f9fa',
+                color: 'Grey',
+                fontSize: '0.65em',
+              }}
+              className="footer-copyright text-center py-3 px-4"
+            >
+              <a style={{backgroundImage: 'none', color: '#ff5700'}} href="mailto:dtcorreo@gmail.com">
+                © 2018 Copyright Logathasan Tharmathurai.
+              </a>{' '}
+              Made in React ⚛️ by his son.
+            </div>
+          </footer>
+        </Container>
+      </Layout>
+    )
+  }
 }
 
 export default IndexPage

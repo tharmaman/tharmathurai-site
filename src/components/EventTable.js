@@ -5,12 +5,10 @@ import TableRow from './TableRow'
 import './EventTable-module.css'
 
 const EventTable = ({ eventData }) => {
-  console.log(eventData)
   const filteredEventData = eventData.filter((node) => node.node.eventName !== 'DoNotDelete')
   const body = filteredEventData.map((node, i) => {
     return <TableRow key={i} eventData={node} />
   })
-  console.log(filteredEventData)
   const output = (filteredEventData.length === 0) ? (
     <h4 style={{marginTop: '1rem'}} id='stayTuned' className="text-center">~ Stay Tuned! ~</h4>
   ) : (
