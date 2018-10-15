@@ -13,7 +13,7 @@ import '../assets/css/main.css'
 
 const jumbotronStyle = {
   backgroundImage:
-    'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),url(https://res.cloudinary.com/tharmaman/image/upload/v1539589118/header-background3-supermin.jpg)',
+    'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),url(https://res.cloudinary.com/tharmaman/image/upload/c_scale,h_1060,w_1772/v1539589118/header-background3-supermin.jpg)',
   backgroundSize: 'cover',
   color: 'White',
 }
