@@ -28,9 +28,6 @@ class EventsCard extends Component {
   }
 
   _handleChange = event => {
-    console.log({
-      [`${event.target.name}`]: event.target.value,
-    })
     this.setState({
       [`${event.target.name}`]: event.target.value,
     })
@@ -41,13 +38,8 @@ class EventsCard extends Component {
     this.setState({
       isLoading: true,
     })
-    console.log('submit', this.state)
     addToMailchimp(this.state.email, { FNAME: this.state.name })
       .then(({ msg, result }) => {
-        console.log(this.state)
-        console.log('msg', `${result}: ${msg}`)
-        console.log(msg)
-        console.log(result)
         if (result === 'success') {
           this.setState({
             isLoading: false,
@@ -57,16 +49,13 @@ class EventsCard extends Component {
             email: '',
             msg: msg,
           })
-          console.log(this.state)
         } else {
-          console.log('boop')
           this.setState({
             isLoading: false,
             isSubmitted: true,
             isSuccessful: false,
             msg: msg,
           })
-          console.log(this.state)
         }
         if (result !== 'success') {
           throw msg
@@ -79,7 +68,6 @@ class EventsCard extends Component {
           isSuccessful: false,
           msg: err,
         })
-        console.log('err', err)
       })
   }
 

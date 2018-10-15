@@ -5,7 +5,6 @@ import TableRow from './TableRow'
 import './EventTable-module.css'
 
 const EventTable = ({ eventData }) => {
-  console.log(eventData)
   const filteredEventData = eventData.filter((node) => node.eventName === 'DoNotDelete')
   const body = filteredEventData.map((node, i) => {
     return <TableRow key={i} eventData={node} />
@@ -27,9 +26,6 @@ const EventTable = ({ eventData }) => {
       </Table>
     </div>
   )
-
-  console.log('output',output)
-
   return (
     <div>
       {output}

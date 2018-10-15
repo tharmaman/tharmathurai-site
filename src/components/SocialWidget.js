@@ -6,7 +6,6 @@ const SocialWidget = ({ authorData }) => {
   const iconNoUnderline = {
     backgroundImage: 'none',
   }
-  console.log(authorData.twitter)
   return (
     <Row className="justify-content-center align-items-center">
       <Col xs="3" className="mx-auto">
