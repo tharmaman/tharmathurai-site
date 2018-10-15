@@ -7,7 +7,7 @@ const EventsCard = ({ eventData }) => {
     <Col xs="12">
       <Card>
         <CardBody>
-          <CardTitle className="text-center">Upcoming Events</CardTitle>
+          <h3 style={{marginTop:'0'}} className="text-center">Upcoming Events</h3>
           <EventTable eventData={eventData} />
         </CardBody>
       </Card>

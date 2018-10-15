@@ -122,7 +122,7 @@ class EventsCard extends Component {
         <Card>
           <CardBody>
             {AlertTing}
-            <CardTitle className="text-center">Stay Up To Date With the Latest News</CardTitle>
+            <h3 style={{marginTop:'0'}} className="text-center">Stay Up To Date With the Latest News</h3>
             {Body}
           </CardBody>
         </Card>
