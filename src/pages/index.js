@@ -38,9 +38,7 @@ class IndexPage extends Component {
     const authorData = data.allContentfulPerson.edges[0].node
     const eventData = data.allContentfulEvent.edges
     const JSONdate = '2019-07-06T00:00:00-04:00'
-    const testDate = '2018-10-15T15:00:00-04:00'
-    const objDate = new Date(JSONdate)
-    console.log(objDate.toLocaleDateString())
+    // const testDate = '2018-10-15T17:44:00-04:00'
     let renderButton = !this.state.isReleased ? (
       <div />
     ) : (
@@ -53,6 +51,14 @@ class IndexPage extends Component {
       >
         ORDER NOW
       </Button>
+    )
+    let renderCountdown = !this.state.isReleased ? (
+      <SexyCountdown
+        date={JSONdate}
+        onEndCountdown={() => this.handleCountdown()}
+      />
+    ) : (
+      <div />
     )
     return (
       <Layout>
@@ -70,17 +76,13 @@ class IndexPage extends Component {
             </Container>
           </Jumbotron>
           {/* just remember to remove this after the time passes */}
-          <SexyCountdown
-            date={testDate}
-            onEndCountdown={() => this.handleCountdown()}
-          />
+          {renderCountdown}
           <br />
           <AboutCard authorData={authorData} />
           <br />
           <Row>
             <EventsCard eventData={eventData} />
           </Row>
-          <br />
           <Row>
             <SubscribeCard />
           </Row>
@@ -93,7 +95,10 @@ class IndexPage extends Component {
               }}
               className="footer-copyright text-center py-3 px-4"
             >
-              <a style={{backgroundImage: 'none', color: '#ff5700'}} href="mailto:dtcorreo@gmail.com">
+              <a
+                style={{ backgroundImage: 'none', color: '#ff5700' }}
+                href="mailto:dtcorreo@gmail.com"
+              >
                 © 2018 Copyright Logathasan Tharmathurai.
               </a>{' '}
               Made in React ⚛️ by his son.
