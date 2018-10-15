@@ -104,7 +104,7 @@ class IndexPage extends Component {
                 color: 'Grey',
                 fontSize: '0.65em',
               }}
-              className="footer-copyright text-center py-3 px-4"
+              className="footer-copyright text-center py-3 px-2"
             >
               <a
                 style={{ backgroundImage: 'none', color: '#ff5700' }}
@@ -112,7 +112,9 @@ class IndexPage extends Component {
               >
                 © 2018 Copyright Logathasan Tharmathurai.
               </a>{' '}
-              Made in React ⚛️ by his son.
+              <div id="footer">
+                Made in React ⚛️ by his son.
+              </div>
             </div>
           </footer>
         </Container>
