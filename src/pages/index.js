@@ -27,6 +27,18 @@ class IndexPage extends Component {
     isReleased: false,
   }
 
+  componentDidMount() {
+    console.log('in componentDidMount');
+    let d1 = new Date()
+    // let test = new Date('2018-10-15T18:04:00-04:00')
+    let d2 = new Date('2019-07-06T00:00:00-04:00')
+    if (d1 > d2) {
+      this.setState({
+        isReleased: true,
+      })
+    }
+  }  
+
   handleCountdown = () => {
     this.setState({
       isReleased: true,
@@ -38,7 +50,7 @@ class IndexPage extends Component {
     const authorData = data.allContentfulPerson.edges[0].node
     const eventData = data.allContentfulEvent.edges
     const JSONdate = '2019-07-06T00:00:00-04:00'
-    // const testDate = '2018-10-15T17:44:00-04:00'
+    // const testDate = '2018-10-15T18:04:00-04:00'
     let renderButton = !this.state.isReleased ? (
       <div />
     ) : (
