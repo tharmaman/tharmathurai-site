@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, CardTitle, Col } from 'reactstrap'
+import { Card, CardBody, Col } from 'reactstrap'
 import EventTable from './EventTable'
 
 const EventsCard = ({ eventData }) => {

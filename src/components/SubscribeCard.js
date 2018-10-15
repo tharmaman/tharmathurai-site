@@ -4,7 +4,6 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 import {
   Card,
   CardBody,
-  CardTitle,
   Button,
   Col,
   Form,

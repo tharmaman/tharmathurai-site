@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
   const eventData = data.allContentfulEvent.edges
   return (
     <Layout>
-      <Container fluid >
+      <Container fluid>
         <Navbar />
         <Jumbotron fluid style={jumbotronStyle}>
           <Container fluid>
@@ -47,12 +47,21 @@ const IndexPage = ({ data }) => {
         <Row>
           <SubscribeCard />
         </Row>
-        <footer >
-        <div style={{backgroundColor: '#f8f9fa', color: 'Grey',fontSize: '0.65em'}} className="footer-copyright text-center py-3 px-4">
-          © 2018 Copyright
-          Logathasan Tharmathurai. Made in React ⚛️ by his son.
-        </div>
-      </footer>
+        <footer>
+          <div
+            style={{
+              backgroundColor: '#f8f9fa',
+              color: 'Grey',
+              fontSize: '0.65em',
+            }}
+            className="footer-copyright text-center py-3 px-4"
+          >
+            <a href="mailto:dtcorreo@gmail.com">
+              © 2018 Copyright Logathasan Tharmathurai.
+            </a>{' '}
+            Made in React ⚛️ by his son.
+          </div>
+        </footer>
       </Container>
     </Layout>
   )
