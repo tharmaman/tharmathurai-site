@@ -11,7 +11,7 @@ const EventTable = ({ eventData }) => {
   })
 
   const output = (filteredEventData.length === 0) ? (
-    <h6 id='stayTuned' className="text-center">~ Stay Tuned! ~</h6>
+    <h4 style={{marginTop: '1rem'}} id='stayTuned' className="text-center">~ Stay Tuned! ~</h4>
   ) : (
     <div className="table-responsive table-borderless">
       <Table id="responsiveTable">
