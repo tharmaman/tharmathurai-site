@@ -11,13 +11,6 @@ import SubscribeCard from '../components/SubscribeCard'
 import SexyCountdown from 'react-sexy-countdown'
 import '../assets/css/main.css'
 
-const jumbotronStyle = {
-  backgroundImage:
-    'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),url(https://res.cloudinary.com/tharmaman/image/upload/c_scale,h_1060,w_1772/v1539589118/header-background3-supermin.jpg)',
-  backgroundSize: 'cover',
-  color: 'White',
-}
-
 const leadStyle = {
   color: 'white',
 }
@@ -75,7 +68,7 @@ class IndexPage extends Component {
       <Layout>
         <Container fluid>
           <Navbar />
-          <Jumbotron fluid style={jumbotronStyle}>
+          <Jumbotron fluid className="jumbotron-optimized">
             <Container fluid>
               <h1 id="lead" className="display-3">
                 The Sadness Of Geography

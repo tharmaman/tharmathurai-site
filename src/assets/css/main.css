@@ -2,26 +2,32 @@
   color: white;
 }
 
+.jumbotron-optimized {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url(https://res.cloudinary.com/tharmaman/image/upload/c_scale,h_1060,w_1772/v1539589118/header-background3-supermin.jpg);
+  background-size: cover;
+  color: white;
+}
 
-button { 
-  color: #FFFFFF !important; 
-  background-color: #FF5700 !important; 
-  border-color: #FF5700 !important; 
-} 
- 
-button:hover, 
-button:focus, 
-button:active, 
-button.active, 
-.open .dropdown-togglebutton { 
-  color: #FFFFFF !important; 
-  background-color: #ff9100 !important; 
-  border-color: #FF5700 !important; 
-} 
- 
-button .badge { 
-  color: #FF5700 !important; 
-  background-color: #FFFFFF !important; 
+button {
+  color: #ffffff !important;
+  background-color: #ff5700 !important;
+  border-color: #ff5700 !important;
+}
+
+button:hover,
+button:focus,
+button:active,
+button.active,
+.open .dropdown-togglebutton {
+  color: #ffffff !important;
+  background-color: #ff9100 !important;
+  border-color: #ff5700 !important;
+}
+
+button .badge {
+  color: #ff5700 !important;
+  background-color: #ffffff !important;
 }
 
 @media screen and (max-width: 537px) {
@@ -29,8 +35,14 @@ button .badge {
   #lead {
     font-size: 3.1em;
   }
+}
 
-
+@media screen and (max-width: 479px) {
+  /* start of phone styles */
+  .jumbotron-optimized {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+      url(https://res.cloudinary.com/tharmaman/image/upload/v1539729156/header-background3-superminMobile-min.jpg);
+  }
 }
 
 a {
