@@ -3,10 +3,18 @@
 }
 
 .jumbotron-optimized {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url(https://res.cloudinary.com/tharmaman/image/upload/c_scale,h_1060,w_1772/v1539589118/header-background3-supermin.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(
+      https://res.cloudinary.com/tharmaman/image/upload/c_scale,h_1060,w_1772/v1539589118/header-background3-supermin.jpg
+    );
   background-size: cover;
   color: white;
+}
+
+.book-border {
+  justify-content: center;
+  margin-top: 10%;
+  border: 4px solid #fff;
 }
 
 button {
@@ -31,17 +39,31 @@ button .badge {
 }
 
 @media screen and (max-width: 537px) {
+  div {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+  }
   /* start of phone styles */
   #lead {
     font-size: 3.1em;
   }
-}
-
-@media screen and (max-width: 479px) {
-  /* start of phone styles */
   .jumbotron-optimized {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-      url(https://res.cloudinary.com/tharmaman/image/upload/v1539729156/header-background3-superminMobile-min.jpg);
+      url(https://res.cloudinary.com/tharmaman/image/upload/v1544392756/header-background-supermin-mobile__deploy.jpg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #jumboContainer {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 991px) {
+  #book-responsive {
+    padding-left: 10%;
   }
 }
 

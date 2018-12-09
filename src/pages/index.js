@@ -29,7 +29,7 @@ class IndexPage extends Component {
         isReleased: true,
       })
     }
-  }  
+  }
 
   handleCountdown = () => {
     this.setState({
@@ -56,7 +56,7 @@ class IndexPage extends Component {
         ORDER NOW
       </Button>
     )
-    let renderCountdown = !this.state.isReleased ? (
+    let renderCountdown = this.state.isReleased ? (
       <SexyCountdown
         date={JSONdate}
         onEndCountdown={() => this.handleCountdown()}
@@ -68,15 +68,34 @@ class IndexPage extends Component {
       <Layout>
         <Container fluid>
           <Navbar />
-          <Jumbotron fluid className="jumbotron-optimized">
+          <Jumbotron fluid id="jumboContainer" className="jumbotron-optimized">
             <Container fluid>
-              <h1 id="lead" className="display-3">
-                The Sadness Of Geography
-              </h1>
-              <p className="lead" style={leadStyle}>
-                My Life as a Tamil Exile
-              </p>
-              {renderButton}
+              <div className="row">
+                <div className="col-lg-8 col-md-6 col-xs-12">
+                  <h1 id="lead" className="display-4">
+                    The Sadness Of Geography
+                  </h1>
+                  <p className="lead" style={leadStyle}>
+                    My Life as a Tamil Exile
+                  </p>
+                  <div id="jumboButton">{renderButton}</div>
+                </div>
+                <div
+                  className="col-lg-4 col-md-6 col-xs-12"
+                  id="book-responsive"
+                >
+                  <picture>
+                    <source srcSet='https://res.cloudinary.com/tharmaman/image/upload/v1544394237/sadnessCoverOpt-mobile.jpg' media="(max-width: 537px)" />
+                    <source srcSet='https://res.cloudinary.com/tharmaman/image/upload/v1544390852/sadnessCoverOpt.jpg' />
+                    <img
+                      src="https://res.cloudinary.com/tharmaman/image/upload/v1544390852/sadnessCoverOpt.jpg"
+                      alt='book-cover'
+                      width="200px"
+                      className="book-border"
+                    />
+                  </picture>
+                </div>
+              </div>
             </Container>
           </Jumbotron>
           {/* you can remove this after time passes */}
@@ -105,9 +124,7 @@ class IndexPage extends Component {
               >
                 © 2018 Copyright Logathasan Tharmathurai.
               </a>{' '}
-              <div id="footer">
-                Made in React ⚛️ by his son.
-              </div>
+              <div id="footer">Made in React ⚛️ by his son.</div>
             </div>
           </footer>
         </Container>
