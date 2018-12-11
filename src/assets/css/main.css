@@ -2,21 +2,6 @@
   color: white;
 }
 
-.jumbotron-optimized {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-    url(
-      https://res.cloudinary.com/tharmaman/image/upload/c_scale,h_1060,w_1772/v1539589118/header-background3-supermin.jpg
-    );
-  background-size: cover;
-  color: white;
-}
-
-.book-border {
-  justify-content: center;
-  margin-top: 10%;
-  border: 4px solid #fff;
-}
-
 button {
   color: #ffffff !important;
   background-color: #ff5700 !important;
@@ -38,35 +23,6 @@ button .badge {
   background-color: #ffffff !important;
 }
 
-@media screen and (max-width: 537px) {
-  div {
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-  }
-  /* start of phone styles */
-  #lead {
-    font-size: 3.1em;
-  }
-  .jumbotron-optimized {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-      url(https://res.cloudinary.com/tharmaman/image/upload/v1544392756/header-background-supermin-mobile__deploy.jpg);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  #jumboContainer {
-    align-items: center;
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 767px) and (max-width: 991px) {
-  #book-responsive {
-    padding-left: 10%;
-  }
-}
-
 a {
   text-shadow: none !important;
 }
@@ -79,6 +35,7 @@ a {
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
+  padding-top: 0;
 }
 
 .react-countdown-box {
@@ -95,4 +52,51 @@ a {
 
 .react-countdown-time-text {
   font-size: 1rem;
+}
+
+.book-cover {
+  width: 54vh;
+  padding: 0;
+}
+
+.header {
+  color: black;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 0.9vh;
+}
+
+.order-now {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin-right: -50%;
+  top:76%;
+  left: 50%;
+}
+
+/* responsive styles start here */
+@media screen and (max-width: 430px) {
+  div {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .book-cover {
+    width: 180vh;
+  }
+
+  .order-now {
+    position: relative;
+    transform: translate(0, 0);
+    margin-right: 0;
+    top:0;
+    left: 0;
+    text-align: center;
+    padding: 2.5vh 0;
+  }
+
+  .header {
+    padding-bottom: 2.5vh;
+  }
 }

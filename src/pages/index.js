@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Jumbotron, Container, Row, Button } from 'reactstrap'
+import { Container, Row, Button } from 'reactstrap'
 import Navbar from '../components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AboutCard from '../components/AboutCard'
@@ -10,10 +10,6 @@ import EventsCard from '../components/EventsCard'
 import SubscribeCard from '../components/SubscribeCard'
 import SexyCountdown from 'react-sexy-countdown'
 import '../assets/css/main.css'
-
-const leadStyle = {
-  color: 'white',
-}
 
 class IndexPage extends Component {
   state = {
@@ -46,17 +42,19 @@ class IndexPage extends Component {
     let renderButton = !this.state.isReleased ? (
       <div />
     ) : (
-      <Button
-        size="lg"
-        color="primary"
-        onClick={() =>
-          window.open('https://www.dundurn.com/books/Sadness-Geography')
-        }
-      >
-        ORDER NOW
-      </Button>
+      <div className="order-now">
+        <Button
+          outline
+          size="lg"
+          onClick={() =>
+            window.open('https://www.dundurn.com/books/Sadness-Geography')
+          }
+        >
+          ORDER NOW
+        </Button>
+      </div>
     )
-    let renderCountdown = this.state.isReleased ? (
+    let renderCountdown = !this.state.isReleased ? (
       <SexyCountdown
         date={JSONdate}
         onEndCountdown={() => this.handleCountdown()}
@@ -68,66 +66,60 @@ class IndexPage extends Component {
       <Layout>
         <Container fluid>
           <Navbar />
-          <Jumbotron fluid id="jumboContainer" className="jumbotron-optimized">
-            <Container fluid>
-              <div className="row">
-                <div className="col-lg-8 col-md-6 col-xs-12">
-                  <h1 id="lead" className="display-4">
-                    The Sadness Of Geography
-                  </h1>
-                  <p className="lead" style={leadStyle}>
-                    My Life as a Tamil Exile
-                  </p>
-                  <div id="jumboButton">{renderButton}</div>
-                </div>
-                <div
-                  className="col-lg-4 col-md-6 col-xs-12"
-                  id="book-responsive"
-                >
-                  <picture>
-                    <source srcSet='https://res.cloudinary.com/tharmaman/image/upload/v1544394237/sadnessCoverOpt-mobile.jpg' media="(max-width: 537px)" />
-                    <source srcSet='https://res.cloudinary.com/tharmaman/image/upload/v1544390852/sadnessCoverOpt.jpg' />
-                    <img
-                      src="https://res.cloudinary.com/tharmaman/image/upload/v1544390852/sadnessCoverOpt.jpg"
-                      alt='book-cover'
-                      width="200px"
-                      className="book-border"
-                    />
-                  </picture>
-                </div>
-              </div>
-            </Container>
-          </Jumbotron>
-          {/* you can remove this after time passes */}
-          {renderCountdown}
-          <br />
-          <AboutCard authorData={authorData} />
-          <br />
-          <Row>
-            <EventsCard eventData={eventData} />
-          </Row>
-          <Row>
-            <SubscribeCard />
-          </Row>
-          <footer>
-            <div
-              style={{
-                backgroundColor: '#f8f9fa',
-                color: 'Grey',
-                fontSize: '0.65em',
-              }}
-              className="footer-copyright text-center py-3 px-2"
-            >
-              <a
-                style={{ backgroundImage: 'none', color: '#ff5700' }}
-                href="mailto:dtcorreo@gmail.com"
-              >
-                © 2018 Copyright Logathasan Tharmathurai.
-              </a>{' '}
-              <div id="footer">Made in React ⚛️ by his son.</div>
+          <div
+            style={{
+              textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '3vh 2vh 0.25vh 2vh',
+            }}
+          >
+            <div>
+              <picture>
+                <source
+                  srcSet="https://res.cloudinary.com/tharmaman/image/upload/v1544491500/SadnessofGeographymobile3.jpg"
+                  media="(max-width: 430px)"
+                />
+                <source srcSet="https://res.cloudinary.com/tharmaman/image/upload/v1544491049/sadnessCover.jpg" />
+                <img
+                  src="https://res.cloudinary.com/tharmaman/image/upload/v1544491049/sadnessCover.jpg"
+                  alt="book-cover"
+                  className="book-cover"
+                />
+              </picture>
+              {renderButton}
             </div>
-          </footer>
+          </div>
         </Container>
+        {/* you can remove this after time passes */}
+        {renderCountdown}
+        <br />
+        <AboutCard authorData={authorData} />
+        <br />
+        <Row>
+          <EventsCard eventData={eventData} />
+        </Row>
+        <Row>
+          <SubscribeCard />
+        </Row>
+        <footer>
+          <div
+            style={{
+              backgroundColor: '#f8f9fa',
+              color: 'Grey',
+              fontSize: '0.65em',
+            }}
+            className="footer-copyright text-center py-3 px-2"
+          >
+            <a
+              style={{ backgroundImage: 'none', color: '#ff5700' }}
+              href="mailto:dtcorreo@gmail.com"
+            >
+              © 2018 Copyright Logathasan Tharmathurai.
+            </a>{' '}
+            <div id="footer">Made in React ⚛️ by his son.</div>
+          </div>
+        </footer>
       </Layout>
     )
   }
