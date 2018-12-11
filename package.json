@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "the-sadness-of-geography",
+  "description": "Author website for Logathasan Tharmathuai",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Danny Tharma <dltcorreo@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.1.3",
     "dotenv": "^6.1.0",
