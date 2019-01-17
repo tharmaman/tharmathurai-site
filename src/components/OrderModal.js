@@ -58,7 +58,7 @@ const OrderModal = ({ open, onClose }) => {
   const renderLinks = links.map(link => {
     return (
       <li>
-        <a className='.order-link' href={link.url} target="_blank">
+        <a className='.order-link' href={link.url} target="_blank" rel="noopener noreferrer">
           {link.name}
         </a>
       </li>
