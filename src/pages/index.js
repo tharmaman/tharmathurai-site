@@ -1,67 +1,88 @@
-import React, { Component } from 'react'
-import { graphql } from 'gatsby'
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import { Container, Row, Button } from 'reactstrap'
-import Navbar from '../components/Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import AboutCard from '../components/AboutCard'
-import EventsCard from '../components/EventsCard'
-import SubscribeCard from '../components/SubscribeCard'
-import SexyCountdown from 'react-sexy-countdown'
-import '../assets/css/main.css'
+import Layout from '../components/layout';
+import { Container, Row, Button } from 'reactstrap';
+import Navbar from '../components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutCard from '../components/AboutCard';
+import EventsCard from '../components/EventsCard';
+import SubscribeCard from '../components/SubscribeCard';
+import OrderModal from '../components/OrderModal';
+import SexyCountdown from 'react-sexy-countdown';
+import '../assets/css/main.css';
 
 class IndexPage extends Component {
   state = {
     isReleased: false,
-  }
+    isModalOpen: false,
+  };
 
   componentDidMount() {
-    let d1 = new Date()
+    let d1 = new Date();
     // let test = new Date('2018-10-15T18:04:00-04:00')
-    let d2 = new Date('2019-07-06T00:00:00-04:00')
+    let d2 = new Date('2019-07-06T00:00:00-04:00');
     if (d1 > d2) {
-      this.setState({
+      this.setState(prevState => ({
+        ...prevState,
         isReleased: true,
-      })
+      }));
     }
   }
 
   handleCountdown = () => {
-    this.setState({
+    this.setState(prevState => ({
+      ...prevState,
       isReleased: true,
-    })
-  }
+    }));
+  };
+
+  handleOpenModal = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      isModalOpen: true,
+    }));
+  };
+
+  handleCloseModal = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      isModalOpen: false,
+    }));
+  };
 
   render() {
-    const { data } = this.props
-    const authorData = data.allContentfulPerson.edges[0].node
-    const eventData = data.allContentfulEvent.edges
-    const JSONdate = '2019-07-06T00:00:00-04:00'
+    const { data } = this.props;
+    const authorData = data.allContentfulPerson.edges[0].node;
+    const eventData = data.allContentfulEvent.edges;
+    const JSONdate = '2019-07-06T00:00:00-04:00';
     // const testDate = '2018-10-15T18:04:00-04:00'
     let renderButton = !this.state.isReleased ? (
-      <div />
+      <div className="order-now">
+        <Button onClick={() => this.handleOpenModal()}>Pre-order Now</Button>
+      </div>
     ) : (
       <div className="order-now">
-        <Button
-          outline
-          size="lg"
-          onClick={() =>
-            window.open('https://www.dundurn.com/books/Sadness-Geography')
-          }
-        >
-          ORDER NOW
-        </Button>
+        <Button onClick={() => this.handleOpenModal()}>ORDER NOW</Button>
       </div>
-    )
+    );
     let renderCountdown = !this.state.isReleased ? (
       <SexyCountdown
         date={JSONdate}
         onEndCountdown={() => this.handleCountdown()}
       />
     ) : (
-      <div />
-    )
+      null
+    );
+
+    // destructure modal state
+    const { isModalOpen } = this.state;
+
+    // conditinally render modal
+    const renderModal = this.state.isModalOpen ? (
+      <OrderModal open={isModalOpen} onClose={this.handleCloseModal} />
+    ) : null;
+
     return (
       <Layout>
         <Container fluid>
@@ -74,7 +95,8 @@ class IndexPage extends Component {
               padding: '3vh 2vh 0.25vh 2vh',
             }}
           >
-            <div>
+            <div className="book-cover-container">
+              {renderModal}
               <picture>
                 <source
                   srcSet="https://res.cloudinary.com/tharmaman/image/upload/v1544491500/SadnessofGeographymobile3.jpg"
@@ -93,7 +115,7 @@ class IndexPage extends Component {
         </Container>
         {/* you can remove this after time passes */}
         {renderCountdown}
-        <br />
+        {this.state.isReleased ? null : <br />}
         <AboutCard authorData={authorData} />
         <br />
         <Row>
@@ -121,11 +143,11 @@ class IndexPage extends Component {
           </div>
         </footer>
       </Layout>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;
 
 export const authorQuery = graphql`
   query indexQuery {
@@ -162,4 +184,4 @@ export const authorQuery = graphql`
       }
     }
   }
-`
+`;

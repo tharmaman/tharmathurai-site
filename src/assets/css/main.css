@@ -56,7 +56,15 @@ a {
 
 .book-cover {
   width: 54vh;
-  padding: 0;
+}
+
+.book-cover-container img {
+  margin: 0;
+  padding-bottom: 3vh;
+}
+
+.book-cover-container {
+  padding-bottom: 3vh;
 }
 
 .header {
