@@ -12,7 +12,7 @@ const OrderModal = ({ open, onClose }) => {
     {
       name: 'Indigo 🇨🇦',
       url:
-        'https://www.chapters.indigo.ca/en-ca/books/the-sadness-of-geography-my/9781459745049-item.html?ikwid=the+sadness+of+geography&ikwsec=Home&ikwidx=0',
+        'https://www.chapters.indigo.ca/en-ca/books/the-sadness-of-geography-my/9781459745025-item.html?ref=item_page%3avariation',
     },
     {
       name: 'Amazon USA 🇺🇸',
