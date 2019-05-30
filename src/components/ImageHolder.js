@@ -2,12 +2,17 @@ import React from 'react'
 import { Row } from 'reactstrap'
 
 const ImageHolder = ({ authorData }) => {
+  const { url } = authorData.image.file;
+
+
   return (
     <Row>
       <img
-        className="mx-auto img-responsive rounded-circle"
-        src="https://images.ctfassets.net/uuvysubhnru6/5DI2sFLaN228auiuMiAeC0/34fddde422c9fa461a2a71c5d6e04ff6/face.jpeg"
-        alt="this is handled in webpack"
+        className="rounded-circle"
+        src={`https:${url}`}
+        alt="A Picture Of The Author"
+        width="400vw"
+        height="360vh"
       />
     </Row>
   )

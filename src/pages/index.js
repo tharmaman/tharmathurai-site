@@ -162,6 +162,11 @@ export const authorQuery = graphql`
           email
           twitter
           instagram
+          image {
+            file {
+              url
+            }
+          }
           shortBio {
             childMarkdownRemark {
               html
