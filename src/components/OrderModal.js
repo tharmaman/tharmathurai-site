@@ -36,22 +36,22 @@ const OrderModal = ({ open, onClose }) => {
     {
       name: 'Amazon Germany 🇩🇪',
       url:
-        'https://www.amazon.de/Sadness-Geography-Tamil-Exile-English-ebook/dp/B07J2J2NHG/ref=sr_1_1?ie=UTF8&qid=1547406991&sr=8-1&keywords=the+sadness+of+geography',
+        'https://www.amazon.de/Sadness-Geography-Life-Tamil-Exile/dp/1459745027/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1547406991&sr=8-1',
     },
     {
       name: 'Amazon France 🇫🇷',
       url:
-        'https://www.amazon.fr/Sadness-Geography-Tamil-Exile-English-ebook/dp/B07J2J2NHG/ref=sr_1_1?ie=UTF8&qid=1547406991&sr=8-1&keywords=the+sadness+of+geography',
+        'https://www.amazon.fr/Sadness-Geography-Life-Tamil-Exile/dp/1459745027/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1547406991&sr=8-1',
     },
     {
       name: 'Amazon UK 🇬🇧',
       url:
-        'https://www.amazon.co.uk/Sadness-Geography-Life-Tamil-Exile-ebook/dp/B07J2J2NHG/ref=sr_1_1?ie=UTF8&qid=1547405627&sr=8-1&keywords=the+sadness+of+geography',
+        'https://www.amazon.co.uk/Sadness-Geography-Life-Tamil-Exile/dp/1459745027/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1547405627&sr=8-1',
     },
     {
       name: 'Amazon Australia 🇦🇺',
       url:
-        'https://www.amazon.com.au/Sadness-Geography-Life-Tamil-Exile-ebook/dp/B07J2J2NHG/ref=sr_1_1?ie=UTF8&qid=1547406561&sr=8-1&keywords=the+sadness+of+geography',
+        'https://www.amazon.com.au/Sadness-Geography-Life-Tamil-Exile/dp/1459745027/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1547406561&sr=8-1',
     },
   ];
 
