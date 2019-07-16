@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AboutCard from '../components/AboutCard';
 import EventsCard from '../components/EventsCard';
+import PressCard from '../components/PressCard.js';
 import SubscribeCard from '../components/SubscribeCard';
 import OrderModal from '../components/OrderModal';
 import SexyCountdown from 'react-sexy-countdown';
@@ -55,6 +56,7 @@ class IndexPage extends Component {
     const { data } = this.props;
     const authorData = data.allContentfulPerson.edges[0].node;
     const eventData = data.allContentfulEvent.edges;
+    const pressData = data.allContentfulPress.edges;
     const JSONdate = '2019-07-06T00:00:00-04:00';
     // const testDate = '2018-10-15T18:04:00-04:00'
     let renderButton = !this.state.isReleased ? (
@@ -121,6 +123,11 @@ class IndexPage extends Component {
         <Row>
           <EventsCard eventData={eventData} />
         </Row>
+        <br />
+        <Row>
+          <PressCard pressData={pressData} />
+        </Row>
+        <br />
         <Row>
           <SubscribeCard />
         </Row>
@@ -185,6 +192,20 @@ export const authorQuery = graphql`
           address
           time
           eventName
+          eventLink
+        }
+      }
+    }
+    allContentfulPress(
+      limit: 4
+      sort: { fields: [date], order: ASC }
+    ) {
+      edges {
+        node {
+          title
+          link
+          publishedBy
+          date
         }
       }
     }

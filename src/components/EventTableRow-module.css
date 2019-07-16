@@ -2,3 +2,7 @@
     min-width: 7.9em;
     font-weight: bold;
 }
+
+.table a {
+    background-image: none;
+}

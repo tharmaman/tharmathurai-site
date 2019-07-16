@@ -1,10 +1,10 @@
 import React from 'react'
 
-import './TableRow-module.css'
+import './PressTableRow-module.css'
 
-export default function TableRow({ eventData }) {
-  const { address, time, eventName } = eventData.node
-  const dateObj = new Date(time)
+export default function PressTableRow({ pressData }) {
+  const { date, link, title, publishedBy } = pressData.node
+  const dateObj = new Date(date)
   const options = {
     weekday: 'short',
     month: 'short',
@@ -17,8 +17,12 @@ export default function TableRow({ eventData }) {
   return (
     <tr>
       <td id="time">{dateString}</td>
-      <td>{eventName}</td>
-      <td>{address}</td>
+      <td>
+        <a target='_blank' href={link}>
+            {title}
+        </a>
+      </td>
+      <td>{publishedBy}</td>
     </tr>
   )
 }

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Table } from 'reactstrap'
-import TableRow from './TableRow'
+import EventTableRow from './EventTableRow'
 
-import './EventTable-module.css'
+import './EventTableRow-module.css'
 
 const EventTable = ({ eventData }) => {
   const filteredEventData = eventData.filter((node) => node.node.eventName !== 'DoNotDelete')
   const body = filteredEventData.map((node, i) => {
-    return <TableRow key={i} eventData={node} />
+    return <EventTableRow key={i} eventData={node} />
   })
   const output = (filteredEventData.length === 0) ? (
     <h4 style={{marginTop: '1rem'}} id='stayTuned' className="text-center">~ Stay Tuned! ~</h4>
